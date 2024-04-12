@@ -7,6 +7,7 @@ import {
     TouchableOpacity,
 } from "react-native";
 import baseStyles from "../styles/baseStyles";
+import Title from "../components/Title";
 
 const OpenAppScreen: FC<any> = ({ navigation }) => {
     const onPressStart = () => {
@@ -16,33 +17,28 @@ const OpenAppScreen: FC<any> = ({ navigation }) => {
         <ImageBackground
             source={require("../assets/mainBackg.jpeg")}
             resizeMode="cover"
-            style={{ height: "100%" }}
+            style={style.mainBackg}
         >
             <View style={baseStyles.container}>
-                <ImageBackground
-                    source={require("../assets/marker.png")}
-                    style={style.marker}
-                >
-                    <TouchableOpacity
-                        style={style.startBtn}
-                        onPress={onPressStart}
-                    >
-                        <Text style={style.textBtn}>Start</Text>
-                    </TouchableOpacity>
-                </ImageBackground>
+                <Title
+                    children={
+                        <TouchableOpacity
+                            style={style.startBtn}
+                            onPress={onPressStart}
+                        >
+                            <Text style={[style.textBtn, baseStyles.text]}>
+                                Start
+                            </Text>
+                        </TouchableOpacity>
+                    }
+                />
             </View>
         </ImageBackground>
     );
 };
 
 const style = StyleSheet.create({
-    marker: {
-        height: 100,
-        width: 350,
-        marginTop: 90,
-        marginLeft: "auto",
-        marginRight: "auto",
-    },
+    mainBackg: { height: "100%" },
     startBtn: {
         display: "flex",
         justifyContent: "center",
