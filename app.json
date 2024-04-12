@@ -1,5 +1,13 @@
 {
   "expo": {
+    "plugins": [
+      [
+        "expo-font",
+        {
+          "fonts": ["./assets/fonts/Pacifico-Regular.ttf"]
+        }
+      ]
+    ],
     "name": "fairy_tales",
     "slug": "fairy_tales",
     "version": "1.0.0",

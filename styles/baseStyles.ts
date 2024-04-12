@@ -5,6 +5,9 @@ const baseStyles = StyleSheet.create({
         paddingLeft: 20,
         paddingRight: 20,
     },
+    text: {
+        fontFamily: "Pacifico-Regular",
+    },
 });
 
 export default baseStyles;
