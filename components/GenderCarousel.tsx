@@ -1,18 +1,29 @@
-import {StyleSheet, View, Text, TouchableWithoutFeedback, Image} from 'react-native';
-import PagerView from 'react-native-pager-view';
+import {
+    StyleSheet,
+    View,
+    Text,
+    TouchableWithoutFeedback,
+    Image,
+} from "react-native";
+import PagerView from "react-native-pager-view";
+import baseStyles from "../styles/baseStyles";
+import { TitleWithoutButton } from "./Title";
 
 export default function GenderCarousel() {
     return (
-        <View style={styles.container}>
+        <View style={[styles.container, baseStyles.container]}>
+            <TitleWithoutButton text="Who are you?" />
             <PagerView style={styles.container} initialPage={0}>
-                <TouchableWithoutFeedback key="1">
+                <TouchableWithoutFeedback style={styles.choiceBtn} key="1">
                     <Image
-                        source={require("../assets/icon.png")}
+                        style={styles.choiceGender}
+                        source={require("../assets/boy.jpeg")}
                     />
                 </TouchableWithoutFeedback>
-                <TouchableWithoutFeedback key="2">
+                <TouchableWithoutFeedback style={styles.choiceBtn} key="2">
                     <Image
-                        source={require("../assets/icon.png")}
+                        style={styles.choiceGender}
+                        source={require("../assets/girl.jpg")}
                     />
                 </TouchableWithoutFeedback>
             </PagerView>
@@ -24,8 +35,10 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
     },
-    page: {
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
+    choiceBtn: {},
+    choiceGender: {},
+    // page: {
+    //     justifyContent: 'center',
+    //     alignItems: 'center',
+    // },
 });
