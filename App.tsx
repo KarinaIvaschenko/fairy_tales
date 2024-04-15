@@ -6,6 +6,8 @@ import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import OpenAppScreen from "./screens/OpenAppScreen";
 import CharacterSelectionScreen from "./screens/CharacterSelectionScreen";
+import AskNameScreen from "./screens/AskNameScreen";
+import GreetingsUserScreen from "./screens/GreetingsUserScreen";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -43,6 +45,16 @@ export default function App() {
                     <Stack.Screen
                         name="CharacterSelection"
                         component={CharacterSelectionScreen}
+                        options={{ headerShown: false }}
+                    />
+                    <Stack.Screen
+                        name="AskName"
+                        component={AskNameScreen}
+                        options={{ headerShown: false }}
+                    />
+                    <Stack.Screen
+                        name="GreetingsUser"
+                        component={GreetingsUserScreen}
                         options={{ headerShown: false }}
                     />
                 </Stack.Navigator>

@@ -23,7 +23,7 @@ const TitleWithButton: FC<ITitleWithButton> = ({ onPressStart, text }) => {
             style={style.marker}
         >
             <TouchableOpacity style={style.startBtn} onPress={onPressStart}>
-                <Text style={[style.textBtn, baseStyles.text]}>{text}</Text>
+                <Text style={baseStyles.text}>{text}</Text>
             </TouchableOpacity>
         </ImageBackground>
     );
@@ -35,7 +35,7 @@ const TitleWithoutButton: FC<ITitleWithoutButton> = ({ text }) => {
             source={require("../assets/marker.png")}
             style={style.marker}
         >
-            <Text style={[style.textBtn, baseStyles.text]}>{text}</Text>
+            <Text style={baseStyles.text}>{text}</Text>
         </ImageBackground>
     );
 };
@@ -53,11 +53,6 @@ const style = StyleSheet.create({
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-    },
-    textBtn: {
-        fontSize: 48,
-        color: "#fff",
-        textAlign: "center",
     },
 });
 

@@ -5,8 +5,20 @@ const baseStyles = StyleSheet.create({
         paddingLeft: 20,
         paddingRight: 20,
     },
+    mainBackg: {
+        height: "100%",
+    },
     text: {
         fontFamily: "Pacifico-Regular",
+        fontSize: 48,
+        color: "#fff",
+        textAlign: "center",
+    },
+    textGreen: {
+        fontFamily: "Pacifico-Regular",
+        fontSize: 32,
+        color: "#558B2F",
+        textAlign: "center",
     },
 });
 
