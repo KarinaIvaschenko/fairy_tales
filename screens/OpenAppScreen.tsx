@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, {FC} from "react";
 import {
     View,
     StyleSheet,
@@ -9,7 +9,7 @@ import {
 import baseStyles from "../styles/baseStyles";
 import Title from "../components/Title";
 
-const OpenAppScreen: FC<any> = ({ navigation }) => {
+const OpenAppScreen: FC<any> = ({navigation}) => {
     const onPressStart = () => {
         navigation.navigate("CharacterSelection");
     };
@@ -38,12 +38,17 @@ const OpenAppScreen: FC<any> = ({ navigation }) => {
 };
 
 const style = StyleSheet.create({
-    mainBackg: { height: "100%" },
+    mainBackg: {
+        height: "100%"
+    },
     startBtn: {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
     },
-    textBtn: { fontSize: 60, color: "#fff" },
+    textBtn: {
+        fontSize: 48,
+        color: "#fff",
+    },
 });
 export default OpenAppScreen;
