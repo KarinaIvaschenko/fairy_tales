@@ -20,7 +20,6 @@ export default function GenderCarousel() {
                             style={styles.choiceGender}
                             source={require("../assets/boy.jpeg")}
                         />
-                        <AntDesign name="leftcircleo" size={28} color="white" style={styles.arrowLeft}/>
                         <AntDesign name="rightcircleo" size={28} color="white" style={styles.arrowRight}/>
                     </View>
 
@@ -32,7 +31,6 @@ export default function GenderCarousel() {
                             source={require("../assets/girl.jpg")}
                         />
                         <AntDesign name="leftcircleo" size={28} color="white" style={styles.arrowLeft}/>
-                        <AntDesign name="rightcircleo" size={28} color="white" style={styles.arrowRight}/>
                     </View>
                 </TouchableWithoutFeedback>
             </PagerView>
