@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import { ImageBackground, View } from "react-native";
 import baseStyles from "../styles/baseStyles";
 import Assistant from "../components/Assistant";
-import Cloud from "../components/Cloud";
+import { Cloud } from "../components/Cloud";
 
 const GreetingsUserScreen: FC<any> = ({ navigation }) => {
     return (
