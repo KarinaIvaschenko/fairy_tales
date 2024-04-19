@@ -1,7 +1,8 @@
 import React, {FC, useState} from 'react';
-import {View, TextInput, Button, StyleSheet, Alert, Text} from 'react-native';
+import {View, TextInput, Button, StyleSheet, Alert, Text, ImageBackground} from 'react-native';
 import {signInWithEmailAndPassword} from "firebase/auth";
 import {db, auth} from "../firebase/firebase";
+import baseStyles from "../styles/baseStyles";
 
 const LoginScreen: FC<any> = ({navigation}) => {
     const [email, setEmail] = useState<string>('');
@@ -28,29 +29,35 @@ const LoginScreen: FC<any> = ({navigation}) => {
     };
 
     return (
-        <View style={styles.container}>
-            {!loading ?
-                (<><TextInput
-                    style={styles.input}
-                    placeholder="Email"
-                    value={email}
-                    onChangeText={setEmail}
-                    keyboardType="email-address"
-                    autoCapitalize="none"
-                />
-                    <TextInput
+        <ImageBackground
+            source={require("../assets/mainBackgBlurry.jpeg")}
+            resizeMode="cover"
+            style={{height: "100%"}}
+        >
+            <View style={[baseStyles.container, styles.container]}>
+                {!loading ?
+                    (<><TextInput
                         style={styles.input}
-                        placeholder="Password"
-                        value={password}
-                        onChangeText={setPassword}
-                        secureTextEntry
+                        placeholder="Email"
+                        value={email}
+                        onChangeText={setEmail}
+                        keyboardType="email-address"
+                        autoCapitalize="none"
                     />
-                    <Button title="Login" onPress={handleSignIn}/>
-                    <Button title="Register" onPress={handleSignUp}/>
-                </>)
-                : <Text>Loading data</Text>
-            }
-        </View>
+                        <TextInput
+                            style={styles.input}
+                            placeholder="Password"
+                            value={password}
+                            onChangeText={setPassword}
+                            secureTextEntry
+                        />
+                        <Button title="Login" onPress={handleSignIn}/>
+                        <Button title="Register" onPress={handleSignUp}/>
+                    </>)
+                    : <Text>Loading data</Text>
+                }
+            </View>
+        </ImageBackground>
     );
 };
 
