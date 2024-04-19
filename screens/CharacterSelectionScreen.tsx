@@ -9,7 +9,7 @@ const CharacterSelectionScreen = () => {
             resizeMode="cover"
             style={{height: "100%"}}
         >
-            {/*<GenderCarousel/>*/}
+            <GenderCarousel/>
         </ImageBackground>
     );
 };
