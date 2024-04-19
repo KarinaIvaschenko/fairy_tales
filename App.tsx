@@ -6,6 +6,8 @@ import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import OpenAppScreen from "./screens/OpenAppScreen";
 import CharacterSelectionScreen from "./screens/CharacterSelectionScreen";
+import LoginScreen from "./screens/LoginScreen";
+import SignUpScreen from "./screens/SignUpScreen";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -29,12 +31,28 @@ export default function App() {
     return (
         <NavigationContainer>
             <View style={styles.container} onLayout={onLayoutRootView}>
-                <Stack.Navigator
-                    initialRouteName="OpenApp"
-                    screenOptions={{
-                        animation: "none",
-                    }}
-                >
+                {/*<Stack.Navigator*/}
+                {/*    initialRouteName="OpenApp"*/}
+                {/*    screenOptions={{*/}
+                {/*        animation: "none",*/}
+                {/*    }}*/}
+                {/*>*/}
+                    <Stack.Navigator
+                        initialRouteName="Login"
+                        screenOptions={{
+                            animation: "none",
+                        }}
+                    >
+                        <Stack.Screen
+                            name="Login"
+                            component={LoginScreen}
+                            options={{ headerShown: false }}
+                        />
+                        <Stack.Screen
+                            name="SignUp"
+                            component={SignUpScreen}
+                            options={{ headerShown: false }}
+                        />
                     <Stack.Screen
                         name="OpenApp"
                         component={OpenAppScreen}
