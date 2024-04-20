@@ -10,6 +10,7 @@ import {
 import { Cloud } from "../components/Cloud";
 import baseStyles from "../styles/baseStyles";
 import Assistant from "../components/Assistant";
+import Cabinet from "../components/Cabinet";
 
 const AskNameScreen: FC<any> = ({ navigation }) => {
     const [name, setName] = useState("");
@@ -17,6 +18,9 @@ const AskNameScreen: FC<any> = ({ navigation }) => {
         navigation.navigate("GreetingsUser");
     };
     const onPressName = () => {};
+    const onPressCabinet = () => {
+        navigation.navigate("Login");
+    }
     return (
         <ImageBackground
             source={require("../assets/mainBackgBlurry.jpeg")}
@@ -24,7 +28,10 @@ const AskNameScreen: FC<any> = ({ navigation }) => {
             style={{ height: "100%" }}
         >
             <View style={baseStyles.container}>
-                <Assistant />
+                <View style={styles.wrapper}>
+                    <Assistant />
+                    <Cabinet onPress={onPressCabinet}/>
+                </View>
                 <Cloud text="What is your name?" />
                 <View style={styles.inputContainer}>
                     <TextInput
@@ -67,6 +74,13 @@ const styles = StyleSheet.create({
         borderRadius: 50,
         padding: 15,
     },
+    wrapper: {
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "flex-start",
+        justifyContent: "space-between",
+        marginTop: 30
+    }
 });
 
 export default AskNameScreen;
