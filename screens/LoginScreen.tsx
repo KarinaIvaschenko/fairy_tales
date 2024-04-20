@@ -1,8 +1,9 @@
 import React, {FC, useState} from 'react';
-import {View, TextInput, Button, StyleSheet, Alert, Text, ImageBackground} from 'react-native';
+import {View, TextInput, Button, StyleSheet, Alert, Text, ImageBackground, Pressable} from 'react-native';
 import {signInWithEmailAndPassword} from "firebase/auth";
 import {db, auth} from "../firebase/firebase";
 import baseStyles from "../styles/baseStyles";
+import BtnClassic from "../components/BtnClassic";
 
 const LoginScreen: FC<any> = ({navigation}) => {
     const [email, setEmail] = useState<string>('');
@@ -51,10 +52,14 @@ const LoginScreen: FC<any> = ({navigation}) => {
                             onChangeText={setPassword}
                             secureTextEntry
                         />
-                        <Button title="Login" onPress={handleSignIn}/>
-                        <Button title="Register" onPress={handleSignUp}/>
+                        <BtnClassic onPress={handleSignIn} text={"Login"}/>
+                        <View style={styles.btnWrapper}>
+                            <Text style={styles.wrapperText}>Don't have an account?</Text>
+                            <BtnClassic onPress={handleSignUp} text={"Register"}/>
+                        </View>
+                        <BtnClassic onPress={() => navigation.goBack()} text={"Go back"}/>
                     </>)
-                    : <Text>Loading data</Text>
+                    : <Text style={styles.loading}>Loading data</Text>
                 }
             </View>
         </ImageBackground>
@@ -75,7 +80,23 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         marginBottom: 10,
         paddingHorizontal: 10,
+        fontSize: 18,
+        backgroundColor: "white",
+        fontFamily: "Pacifico-Regular",
+        borderRadius: 15
     },
+    btnWrapper: {
+        marginTop: 20,
+        marginBottom: 20
+    },
+    wrapperText: {
+        color: "white"
+    },
+    loading: {
+        fontSize: 18,
+        color: "#558B2F",
+        fontFamily: "Pacifico-Regular",
+    }
 });
 
 export default LoginScreen;

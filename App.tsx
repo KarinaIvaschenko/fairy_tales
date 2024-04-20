@@ -33,31 +33,25 @@ export default function App() {
     return (
         <NavigationContainer>
             <View style={styles.container} onLayout={onLayoutRootView}>
-                {/*<Stack.Navigator*/}
-                {/*    initialRouteName="OpenApp"*/}
-                {/*    screenOptions={{*/}
-                {/*        animation: "none",*/}
-                {/*    }}*/}
-                {/*>*/}
-                    <Stack.Navigator
-                        initialRouteName="Login"
-                        screenOptions={{
-                            animation: "none",
-                        }}
-                    >
-                        <Stack.Screen
-                            name="Login"
-                            component={LoginScreen}
-                            options={{ headerShown: false }}
-                        />
-                        <Stack.Screen
-                            name="SignUp"
-                            component={SignUpScreen}
-                            options={{ headerShown: false }}
-                        />
+                <Stack.Navigator
+                    initialRouteName="OpenApp"
+                    screenOptions={{
+                        animation: "none",
+                    }}
+                >
                     <Stack.Screen
                         name="OpenApp"
                         component={OpenAppScreen}
+                        options={{ headerShown: false }}
+                    />
+                    <Stack.Screen
+                        name="Login"
+                        component={LoginScreen}
+                        options={{ headerShown: false }}
+                    />
+                    <Stack.Screen
+                        name="SignUp"
+                        component={SignUpScreen}
                         options={{ headerShown: false }}
                     />
                     <Stack.Screen
